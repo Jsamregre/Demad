@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Ministerios Musicales</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="adminLogin">
+    <h2>Ingreso Administrador</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+    <hr>
+    <h3>Para los músicos</h3>
+    <p>¿Ya eres miembro? Ingresa la fecha para consultar tu participación:</p>
+    <input type="date" id="searchDateGuest">
+    <button onclick="searchParticipationGuest()">Buscar Participación</button>
+    <div id="ministriesListGuest"></div>
+  </div>
+
+  <div id="appContainer" style="display: none;">
+    <h1>Gestión de Ministerios</h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+
+    <div id="adminSection">
+      <h2>Ingreso de Participaciones</h2>
+      <form id="ministerForm">
+        <input type="text" id="ministerName" placeholder="Nombre del ministro" required>
+        <input type="text" id="supportMinisters" placeholder="Ministros de apoyo (separados por comas)" required>
+        <input type="date" id="serviceDate" required>
+        <button type="submit">Agregar Participación</button>
+      </form>
+
+      <h2>Buscar Participación de Ministros</h2>
+      <input type="date" id="searchDateAdmin">
+      <button onclick="searchParticipationAdmin()">Buscar</button>
+
+      <button id="generateImageBtn">Generar Imagen de Participaciones</button>
+      <div id="ministriesListAdmin"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
